@@ -32,8 +32,8 @@ export class GooglePubSubServer {
   async listenForMessagesInTopic(subscriptionNameOrId: string) {
 
     const subscription = this.pubSubClient.subscription(subscriptionNameOrId);
-    const data = JSON.stringify({ integrated: 1 });
-    const subsidiaryPeriodTopic = 'projects/fastify-pub-sub/topics/SubsidiaryPeriod'
+    // const data = JSON.stringify({ integrated: 1 });
+    // const subsidiaryPeriodTopic = 'projects/fastify-pub-sub/topics/SubsidiaryPeriod'
 
     const messageHandler = (message: Message) => {
       console.log(`Received message: ${message.data}:`);
@@ -41,7 +41,7 @@ export class GooglePubSubServer {
 
       message.ack();
 
-      this.publishMessageInTopic(subsidiaryPeriodTopic, data)
+      // this.publishMessageInTopic(subsidiaryPeriodTopic, data)
     };
 
     subscription.on('message', messageHandler);

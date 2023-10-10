@@ -6,12 +6,12 @@ app.listen({
   host: '0.0.0.0',
   port: validatedEnv.PORT,
 }).then(() => {
-  console.log('🚀 Alfredo OOPS Running')
+  console.log('🚀 Order Service Running')
 })
 
-const consumer = async () => {
-  const pubSubServer = new GooglePubSubServer();
-  await pubSubServer.listenForMessagesInTopic('projects/fastify-pub-sub/subscriptions/ConfigData-sub');
-}
+// const consumer = async () => {
+//   const pubSubServer = new GooglePubSubServer();
+//   await pubSubServer.listenForMessagesInTopic('projects/fastify-pub-sub/subscriptions/ConfigData-sub');
+// }
 
-consumer();
+// consumer();

@@ -1,9 +1,9 @@
 import { FastifyInstance } from "fastify";
-import { createPeriod } from "./publish-messages";
+import { createOrder } from "./publish-messages";
 
 // fastify plugin
 export async function pubSubRoutes(app: FastifyInstance) {
 
-  app.post("/periods", createPeriod);
+  app.post("/order", createOrder);
 
 }

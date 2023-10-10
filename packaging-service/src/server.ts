@@ -6,12 +6,12 @@ app.listen({
   host: '0.0.0.0',
   port: validatedEnv.PORT,
 }).then(() => {
-  console.log('🚀 Alfredo ADM Server Running')
+  console.log('🚀 Packaging Service Running')
 })
 
 const consumer = async () => {
   const pubSubServer = new GooglePubSubServer();
-  await pubSubServer.listenForMessagesInTopic('projects/fastify-pub-sub/subscriptions/SubsidiaryPeriod-sub');
+  await pubSubServer.listenForMessagesInTopic('projects/fastify-pub-sub/subscriptions/package_sub');
 }
 
 consumer();
