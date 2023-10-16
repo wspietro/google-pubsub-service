@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from "fastify";
 import { GooglePubSubServer } from "../google-pubsub-server";
 
 export async function createOrder(request: FastifyRequest, reply: FastifyReply) {
-  const dataMessage = JSON.stringify(request.body);
+  const dataMessage = request.body;
 
   const topicNameOrId = 'projects/fastify-pub-sub/topics/order_topic';
 

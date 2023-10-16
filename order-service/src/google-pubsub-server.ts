@@ -15,13 +15,14 @@ export class GooglePubSubServer {
     this.pubSubClient = new PubSub({ projectId, credentials });
   }
 
-  async publishMessageInTopic(topicNameOrId: string, data: string) {
-    const dataBuffer = Buffer.from(data);
+  async publishMessageInTopic(topicNameOrId: string, message: any) {
+    const dataBuffer = Buffer.from(message.data);
+    const customAttributes = message.order
 
     try {
       const messageId = await this.pubSubClient
         .topic(topicNameOrId)
-        .publishMessage({ data: dataBuffer });
+        .publishMessage({ data: dataBuffer, attributes: customAttributes });
       console.log(`Message ${messageId} published.`);
     } catch (error: any) {
       console.error(`Received error while publishing: ${error.message}`);
@@ -32,8 +33,6 @@ export class GooglePubSubServer {
   async listenForMessagesInTopic(subscriptionNameOrId: string) {
 
     const subscription = this.pubSubClient.subscription(subscriptionNameOrId);
-    // const data = JSON.stringify({ integrated: 1 });
-    // const subsidiaryPeriodTopic = 'projects/fastify-pub-sub/topics/SubsidiaryPeriod'
 
     const messageHandler = (message: Message) => {
       console.log(`Received message: ${message.data}:`);
@@ -41,7 +40,6 @@ export class GooglePubSubServer {
 
       message.ack();
 
-      // this.publishMessageInTopic(subsidiaryPeriodTopic, data)
     };
 
     subscription.on('message', messageHandler);

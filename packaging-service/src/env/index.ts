@@ -5,7 +5,7 @@ import { z } from "zod"
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['dev', 'test', 'prod']).default('dev'),
-  PORT: z.coerce.number().default(8080),
+  PORT: z.coerce.number().default(3434),
   CLIENT_EMAIL: z.string(),
   PRIVATE_KEY: z.string(),
 })
