@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <a href="#-visão-geral-do-serviço-Pub/Sub">Visão Geral</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-visão-geral-do-serviço-pubsub">Visão Geral</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-executar">Como executar</a>
 </p>
@@ -20,7 +20,7 @@
 
 ---
 
-## ✏️ Tecnologias
+## 🖊️ Tecnologias
 
 Para a construção do projeto, foram utilizadas as seguintes tecnologias:
 
