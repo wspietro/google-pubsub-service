@@ -34,7 +34,7 @@ export class GooglePubSubServer {
     const subscription = this.pubSubClient.subscription(subscriptionNameOrId);
 
     const messageHandler = (message: Message) => {
-      console.log(`Message ${message.id} received:`);
+      console.log(`\nMessage ${message.id} received:`);
       console.log(`\tUser: ${message.attributes.user}`);
       console.log(`\tProduct ID: ${message.attributes.product_id}`);
       console.log(`\tAddress ID: ${message.attributes.address_id}`);
